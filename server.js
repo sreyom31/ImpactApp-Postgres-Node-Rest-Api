@@ -49,20 +49,6 @@ app.post("/upload", (req, res) => {
   stream.pipe(csvStream);
 });
 
-// app.post('/upload', async (req, res) => {
-//     try {
-//         const { id, name, age, mark1, mark2, mark3 } = req.body
-//         const newStudent = await pool.query("INSERT INTO students (name, age, mark1, mark2, mark3) VALUES($1, $2, $3, $4, $5) RETURNING *", [name, age, mark1, mark2, mark3])
-//         res.status(200).json(newStudent.rows[0])
-//     } catch (err) {
-//         console.log(err);
-//         res.json({
-//             status: 500,
-//             message: "file not saved"
-//         })
-//     }
-// })
-
 app.post('/students/:id/result', async (req, res) => {
     try {
         // res.setHeader("Content-Type", "appplications/json");
